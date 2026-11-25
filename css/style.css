@@ -102,24 +102,30 @@ img {
   gap: 1rem;
   padding: 0.85rem 2rem;
   background-color: var(--brown-dark);
-  color: var(--cream);
+  color: #fdf6ec;
   border-bottom: 3px solid var(--gold);
 }
 
-.logo,
-.logo:link,
-.logo:visited,
-.logo:hover,
-.logo:active {
+a.logo,
+a.logo:link,
+a.logo:visited,
+a.logo:hover,
+a.logo:active,
+a.logo span,
+a.logo:link span,
+a.logo:visited span,
+a.logo:hover span,
+a.logo:active span {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  color: var(--cream);
+  color: #fdf6ec;
   text-decoration: none;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.5rem;
   font-weight: 700;
   opacity: 1;
+  visibility: visible;
 }
 
 .logo img {
@@ -143,7 +149,7 @@ img {
   display: inline-block;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
-  color: var(--cream);
+  color: #fdf6ec;
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -169,19 +175,19 @@ main > section:not(.hero) {
   margin-top: 0;
   margin-bottom: 0;
   background: linear-gradient(135deg, #7c3f1d, #d97736);
-  color: var(--cream);
+  color: #fdf6ec;
   text-align: center;
   padding: 5rem 2rem;
 }
 
 .hero h1 {
   font-size: clamp(2.25rem, 5vw, 3.5rem);
-  color: var(--cream);
+  color: #fdf6ec;
 }
 
 .hero p {
   margin: 0 auto 1.5rem;
-  color: var(--cream);
+  color: #fdf6ec;
   font-size: 1.1rem;
 }
 
@@ -205,7 +211,7 @@ main > section:not(.hero) {
 .btn-primary:hover,
 .btn:active,
 .btn-primary:active {
-  background-color: var(--cream);
+  background-color: #fdf6ec;
   color: var(--brown-dark);
 }
 
@@ -311,7 +317,7 @@ td {
 
 thead th {
   background-color: var(--brown-dark);
-  color: var(--cream);
+  color: #fdf6ec;
   font-weight: 700;
 }
 
@@ -392,13 +398,13 @@ footer {
   text-align: center;
   padding: 1.5rem 2rem;
   background-color: var(--brown-dark);
-  color: var(--cream);
+  color: #fdf6ec;
   font-size: 0.9rem;
 }
 
 footer p {
   margin: 0.25rem auto;
-  color: var(--cream);
+  color: #fdf6ec;
 }
 
 @media (max-width: 640px) {
