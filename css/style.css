@@ -111,13 +111,13 @@ a.logo:active span {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  color: #fdf6ec !important;
+  color: #fdf6ec;
   text-decoration: none;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.5rem;
   font-weight: 700;
-  opacity: 1 !important;
-  visibility: visible !important;
+  opacity: 1;
+  visibility: visible;
 }
 
 .logo img {
@@ -311,7 +311,7 @@ thead th,
 thead th:hover,
 thead th:active {
   background-color: var(--brown-dark);
-  color: #fdf6ec !important;
+  color: #fdf6ec;
   font-weight: 700;
 }
 
@@ -415,7 +415,7 @@ footer p {
   color: #fdf6ec;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .site-header {
     position: static;
     flex-direction: column;
@@ -431,23 +431,37 @@ footer p {
   }
 
   .booking-form {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
     padding: 1.25rem;
   }
 
-  .booking-form label,
+  .booking-form label {
+    text-align: left;
+    margin-top: 0.25rem;
+  }
+
   .booking-form input,
   .booking-form textarea,
-  .booking-form button {
-    grid-column: 1 / -1;
+  .booking-form button,
+  .booking-form .btn,
+  .booking-form .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .booking-form input,
+  .booking-form textarea {
     text-align: left;
-    justify-self: stretch;
+    margin-bottom: 0.35rem;
   }
 
   .booking-form button,
   .booking-form .btn,
   .booking-form .btn-primary {
-    text-align: center;
+    margin-top: 0.5rem;
+    padding: 0.85rem 1.25rem;
   }
 
   th:nth-child(2),
