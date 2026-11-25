@@ -2,7 +2,6 @@
    The Byte Café – Stylesheet
    ===================================================================== */
 
-/* ---------- PART 4: Custom properties ---------- */
 :root {
   --brown: #6b3e26;
   --brown-dark: #4a2917;
@@ -12,16 +11,12 @@
   --radius: 10px;
 }
 
-/* ---------- PART 5: Box model reset ---------- */
-/* Ensure width and height include padding and border on all elements */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* ---------- PART 4: Base typography, colours, images & links ---------- */
-/* Apply page font, unitless line-height, text colour, and cream background */
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -31,7 +26,6 @@ body {
   background-color: var(--cream);
 }
 
-/* Style headings with a serif font stack and brown accent */
 h1,
 h2,
 h3 {
@@ -51,7 +45,6 @@ h2 {
   margin: 0 0 1.75rem;
 }
 
-/* Add a gold bar below section headings */
 h2::after {
   content: "";
   display: block;
@@ -67,19 +60,16 @@ h3 {
   margin: 0.75rem 0 0.4rem;
 }
 
-/* Constrain paragraph measure for comfortable reading */
 p {
   max-width: 65ch;
   margin-top: 0;
 }
 
-/* Prevent oversized images and remove inline baseline gaps */
 img {
   max-width: 100%;
   display: block;
 }
 
-/* Style link states in LVHFA order while preserving focus indicators */
 :link {
   color: var(--brown);
 }
@@ -101,8 +91,6 @@ img {
   color: #000000;
 }
 
-/* ---------- PART 7 & 9: Header & Navigation ---------- */
-/* Sticky flex header with brand on left and nav links on right */
 .site-header {
   position: sticky;
   top: 0;
@@ -118,7 +106,6 @@ img {
   border-bottom: 3px solid var(--gold);
 }
 
-/* Align logo image and title horizontally */
 .logo {
   display: flex;
   align-items: center;
@@ -134,7 +121,6 @@ img {
   object-fit: contain;
 }
 
-/* Horizontal pill-style navigation links */
 .nav-list {
   display: flex;
   align-items: center;
@@ -160,8 +146,6 @@ img {
   color: var(--brown-dark);
 }
 
-/* ---------- Hero & Buttons ---------- */
-/* Warm gradient banner with centered text and primary CTA */
 .hero {
   background: linear-gradient(135deg, var(--brown-dark), var(--brown));
   color: var(--cream);
@@ -178,7 +162,6 @@ img {
   color: var(--cream);
 }
 
-/* Gold call-to-action and submit button styling */
 .btn,
 .btn-primary {
   display: inline-block;
@@ -199,16 +182,12 @@ img {
   color: var(--brown-dark);
 }
 
-/* ---------- PART 5: Main Sections ---------- */
-/* Center sections and keep vertical rhythm consistent */
 main > section {
   max-width: 1100px;
   margin: 0 auto;
   padding: 4rem 1.5rem;
 }
 
-/* ---------- PART 8 & 9: Specials Grid, Cards & NEW Badge ---------- */
-/* Responsive multi-column card grid */
 .card-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -216,7 +195,6 @@ main > section {
   align-items: stretch;
 }
 
-/* Column flex card so prices sit aligned at the bottom */
 .card {
   position: relative;
   display: flex;
@@ -235,7 +213,6 @@ main > section {
   border-radius: calc(var(--radius) - 2px);
 }
 
-/* Pin price to the bottom edge of each card */
 .card .price {
   margin-top: auto;
   padding-top: 0.75rem;
@@ -243,7 +220,6 @@ main > section {
   color: var(--brown-dark);
 }
 
-/* Angled badge anchored to the top-right corner of the first card */
 .badge {
   position: absolute;
   top: -0.5rem;
@@ -260,11 +236,13 @@ main > section {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* ---------- PART 6: Lists & Menu Table ---------- */
-/* Uppercase Roman numerals for scheduled events */
 .event-list {
   list-style-type: upper-roman;
   padding-left: 1.75rem;
+}
+
+.event-list li {
+  margin-bottom: 0.5rem;
 }
 
 .event-list li::marker {
@@ -272,7 +250,18 @@ main > section {
   font-weight: 700;
 }
 
-/* Square markers inside with dashed dividers between subsequent items */
+.tag {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid #8c7a6b;
+  background-color: #faf4ec;
+  color: var(--brown-dark);
+}
+
 .feature-list {
   list-style-type: square;
   list-style-position: inside;
@@ -285,7 +274,6 @@ main > section {
   margin-top: 0.5rem;
 }
 
-/* Styled menu table with zebra rows, hover highlight, and right-aligned prices */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -331,8 +319,6 @@ caption {
   padding-top: 0.6rem;
 }
 
-/* ---------- PART 8: Booking Form ---------- */
-/* Two-column form grid with right-aligned labels */
 .booking-form {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -381,7 +367,6 @@ caption {
   justify-self: start;
 }
 
-/* ---------- Footer ---------- */
 footer {
   text-align: center;
   padding: 1.5rem 2rem;
@@ -395,7 +380,6 @@ footer p {
   color: var(--cream);
 }
 
-/* ---------- PART 10: Responsive Design (<= 640px) ---------- */
 @media (max-width: 640px) {
   .site-header {
     position: static;
@@ -431,7 +415,6 @@ footer p {
   }
 }
 
-/* ---------- Optional Dark Theme & Print ---------- */
 body.dark {
   --cream: #1b1410;
   --brown: #9c5a35;
