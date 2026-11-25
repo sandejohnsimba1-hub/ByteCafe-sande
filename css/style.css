@@ -93,9 +93,9 @@ img {
   flex-wrap: wrap;
   gap: 1rem;
   padding: 0.85rem 2rem;
-  background-color: var(--brown-dark);
+  background-color: #6f4226;
   color: #fdf6ec;
-  border-bottom: 3px solid var(--gold);
+  border-bottom: none;
 }
 
 a.logo,
@@ -221,8 +221,8 @@ main > section:not(.hero) {
   background-color: #ffffff;
   padding: 1rem;
   border-radius: var(--radius);
-  border: 1px solid #e6d7c3;
-  box-shadow: 0 4px 12px rgba(74, 41, 23, 0.08);
+  border: 1px solid #dfd0bd;
+  box-shadow: 0 6px 16px rgba(74, 41, 23, 0.14);
 }
 
 .card img {
@@ -252,7 +252,7 @@ main > section:not(.hero) {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transform: rotate(8deg);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.28);
 }
 
 .event-list {
