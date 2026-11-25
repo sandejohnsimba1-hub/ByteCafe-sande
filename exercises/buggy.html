@@ -2,106 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Part 11 – Debug Clinic</title>
-  <!--
-    This page contains 10 deliberate bugs (HTML and CSS) plus 1 best-practice
-    problem in the <head>.
-    The page SHOULD look like this when fixed:
-      - Arial font everywhere, light grey page background
-      - Dark blue h1, UPPERCASE h2 headings
-      - The book list uses star-shaped "★" bullets in orange
-      - Card titles are bold and green
-      - Contact form: labels in a left column, inputs in a right column (grid)
-      - Clicking the "Email" label puts the cursor in the email box
-      - The "Send" button turns deepskyblue on hover
-    Find each bug, fix it, and record it in the worksheet (line, bug, fix, how you found it).
-  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debug Clinic</title>
   <style>
-    /* Set base font and page background */
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: #f4f4f4;
+      color: #222222;
+      margin: 2rem;
     }
 
-    /* Make main heading dark blue */
     h1 {
-      color: darkblue;
+      color: #0b2c8a;
     }
 
-    /* Transform section headings to uppercase */
-    h2 {
-      text-transform: uppercase;
+    .reading-list {
+      list-style-type: none;
+      padding-left: 0;
     }
 
-    /* Style list markers on the book list with orange stars */
-    ul.books li::marker {
+    .reading-list li::before {
       content: "★ ";
-      color: orange;
+      color: #e67e00;
     }
 
-    /* Style card titles in bold green */
-    .card-title {
-      font-weight: bold;
-      color: green;
+    .featured-title {
+      color: #1b7a1b;
     }
 
-    /* Lay out the contact form in a two-column grid */
-    form {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 12px;
+    .contact-box {
+      border: 1px solid #999999;
+      padding: 1rem;
       max-width: 500px;
+      background-color: #ffffff;
     }
 
-    /* Place labels in the first column and align right */
-    label {
-      grid-column: 1 / 2;
+    .form-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .form-row label {
       text-align: right;
     }
 
-    /* Place inputs and submit button in the second column */
-    input,
-    button {
+    .form-row input {
+      width: 100%;
+      padding: 0.35rem;
+    }
+
+    .form-actions {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 0.75rem;
+    }
+
+    .form-actions button {
       grid-column: 2 / 3;
-    }
-
-    /* Highlight the button on hover */
-    button:hover {
-      background-color: deepskyblue;
-    }
-
-    /* Add border and padding around the contact form */
-    #contact {
-      border: 1px solid #ccc;
-      padding: 1rem;
+      width: 100%;
+      padding: 0.35rem;
     }
   </style>
 </head>
 <body>
   <h1>Debug Clinic</h1>
 
-  <h2>My reading list</h2>
-  <ul class="books">
-    <li>CSS in Depth</li>
-    <li>CSS: The Definitive Guide</li>
-    <li>CSS Secrets</li>
-  </ul>
+  <section>
+    <h2>MY READING LIST</h2>
+    <ul class="reading-list">
+      <li>CSS in Depth</li>
+      <li>CSS: The Definitive Guide</li>
+      <li>CSS Secrets</li>
+    </ul>
+  </section>
 
-  <h2>Featured</h2>
-  <div class="card">
-    <h3 class="card-title">Learning Grid Layout</h3>
+  <section>
+    <h2>FEATURED</h2>
+    <h3 class="featured-title">Learning Grid Layout</h3>
     <p>Two-dimensional layouts made simple.</p>
-  </div>
+  </section>
 
-  <h2>Contact us</h2>
-  <form id="contact">
-    <label for="fullname">Name</label>
-    <input id="fullname" type="text">
-
-    <label for="email">Email</label>
-    <input id="email" type="email">
-
-    <button>Send</button>
-  </form>
+  <section>
+    <h2>CONTACT US</h2>
+    <div class="contact-box">
+      <form>
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text">
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email">
+        </div>
+        <div class="form-actions">
+          <button type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+  </section>
 </body>
 </html>

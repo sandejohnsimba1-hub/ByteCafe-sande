@@ -1,5 +1,4 @@
-/* Part 1 – external stylesheet */
+/* Part 1 – Three Ways to Add CSS (starting stylesheet) */
 p {
-  color: red;
-  font-family: Arial, sans-serif;
+  color: blue;
 }

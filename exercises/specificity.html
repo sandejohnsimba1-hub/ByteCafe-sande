@@ -4,45 +4,49 @@
   <meta charset="UTF-8">
   <title>Part 3 – Specificity Detective</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 2rem; }
-    /* ====== DO NOT EDIT THESE RULES UNTIL STEP 3 ====== */
-    /* R1 */ p              { color: black; }
-    /* R2 */ .note          { color: green; }
-    /* R3 */ #case p        { color: orange; }
-    /* R4 */ p.note         { color: purple; }
-    /* R5 */ .clue          { color: teal; }
-    /* R6 */ div .clue      { color: brown; }
-    /* R7 */ #case .clue    { color: red; }
-    /* R8 */ .clue          { color: navy; }
-    /* R9 */ #evidence      { color: magenta; }
-    /* R10 */ section p:first-child { color: olive; }
-    /* R11 */ .box          { color: crimson; border: 2px solid crimson; padding: .5rem; }
-    /* ================================================== */
+    /* R1 */
+    p { color: gray; }
+    /* R2 */
+    .note { color: teal; }
+    /* R3 */
+    div p { color: navy; }
+    /* R4 */
+    .box .note { color: purple; }
+    /* R5 */
+    #special { color: crimson; }
+    /* R6 */
+    div.box p.note { color: olive; }
+    /* R7 */
+    .box > p { color: saddlebrown; }
+    /* R8 */
+    p#special { color: darkorange; }
+    /* R9 */
+    #evidence { color: green; }
+    /* R10 */
+    section .item { color: slateblue; }
+    /* R11 */
+    .inherit-demo { color: crimson; border: 2px solid crimson; }
   </style>
 </head>
 <body>
-  <h1>Specificity Detective</h1>
-
-  <p>E1 – A plain paragraph outside the case file.</p>
-  <p class="note">E2 – A paragraph with class "note".</p>
-
-  <div id="case">
-    <p>E3 – A plain paragraph inside #case.</p>
-    <p class="note">E4 – A note inside #case.</p>
-    <p class="clue">E5 – A clue inside #case.</p>
-    <p class="clue" id="evidence">E6 – The evidence.</p>
-    <p class="clue" style="color: gray;">E7 – A clue with an inline style.</p>
-  </div>
-
-  <span class="clue">E8 – A clue outside the case (a span).</span>
-
-  <section>
-    <p>E9 – First paragraph in a section.</p>
-    <p>E10 – Second paragraph in a section.</p>
-  </section>
-
+  <p>E1: Plain paragraph</p>
+  <p class="note">E2: Note paragraph</p>
   <div class="box">
-    E11 – A box with <em>emphasised text</em> and a <a href="#">link</a>.
+    <p>E3: Paragraph inside box</p>
+    <p class="note">E4: Note inside box</p>
+  </div>
+  <p id="special" class="note">E5: Special note</p>
+  <section>
+    <div id="evidence" class="item">E6: Evidence item</div>
+  </section>
+  <p id="special" style="color: hotpink;">E7: Inline style override</p>
+  <p id="special">E8: Another special</p>
+  <div class="box">
+    <p class="note">E9: Box note</p>
+  </div>
+  <div class="item">E10: Item outside section</div>
+  <div class="inherit-demo">
+    E11: Inherited parent <em id="em-child">emphasized child</em> and <a href="#">link child</a>
   </div>
 </body>
 </html>

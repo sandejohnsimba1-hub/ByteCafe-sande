@@ -1,38 +1,76 @@
-/* =========================================================
-   Part 2 – Selector Gym
-   Test ONE challenge at a time: keep the challenge you are working
-   on active and comment the others out.
-   Record each selector and the elements it matched in the worksheet.
-   ========================================================= */
+/* =====================================================================
+   Part 2 – The Selector Gym
+   Write one rule per challenge (S1–S14) giving matching elements:
+     background-color: yellow;
+   Test one challenge at a time by uncommenting it.
+   ===================================================================== */
 
-/* S1  All paragraphs (type selector) */
-/* ??? { background-color: yellow; } */
-/* p { background-color: yellow; } */
+/* S1: All paragraphs */
+p {
+  background-color: yellow;
+}
 
-/* S2  Only elements with class "intro" (class selector) */
-/*  .intro { background-color: yellow; } */
-/* S3  Only the element that has BOTH classes intro and highlight */
-/* .intro.highlight { background-color: yellow; } */
-/* S4  Only paragraph P6 (id selector) */
-/* #special { background-color: yellow; } */
-/* S5  Only the <li> with class "highlight" – not P3! (type + class) */
-/* li.highlight { background-color: yellow; } */
-/* S6  Only the NESTED list item L3a (descendant combinator) */
-/* ul ul li { background-color: yellow; } */
-/* S7  Every paragraph that comes IMMEDIATELY after an <h2> (adjacent sibling) */
-/* h2 + p { background-color: yellow; } */
-/* S8  Every paragraph that comes AFTER an <h2> at the same level (general sibling)
-       Question: why does it match more than you might expect? */
-/* h2 ~ p { background-color: yellow; } */
-/* S9  Only links whose href STARTS WITH "https" (attribute selector) */
-/* a[href^="https"] { background-color: yellow; } */
-/* S10 Only links whose href ENDS WITH ".pdf" */
-/* a[href$=".pdf"] { background-color: yellow; } */
-/* S11 Only the email input */
-/* input[type="email"] { background-color: yellow; } */
-/* S12 Only disabled inputs (pseudo-class) */
-/* input:disabled {background-color: yellow;} */
-/* S13 The FIRST list item in every list (pseudo-class) */
-/* li:first-child { background-color: yellow; } */
-/* S14 Both <h2> headings AND paragraph P6 in one rule (grouping) */
- h2, #special { background-color: yellow; }
+/* S2: Only elements with class "intro" */
+/* .intro {
+  background-color: yellow;
+} */
+
+/* S3: Only the element with BOTH classes intro and highlight */
+/* .intro.highlight {
+  background-color: yellow;
+} */
+
+/* S4: Only paragraph P6 (use its id) */
+/* #p6 {
+  background-color: yellow;
+} */
+
+/* S5: Only the <li> with class highlight (not P3!) */
+/* li.highlight {
+  background-color: yellow;
+} */
+
+/* S6: Only the nested list item L3a */
+/* ul ul li {
+  background-color: yellow;
+} */
+
+/* S7: Every paragraph immediately after an <h2> */
+/* h2 + p {
+  background-color: yellow;
+} */
+
+/* S8: Every paragraph after an <h2> (same parent) */
+/* h2 ~ p {
+  background-color: yellow;
+} */
+
+/* S9: Links whose href starts with "https" */
+/* a[href^="https"] {
+  background-color: yellow;
+} */
+
+/* S10: Links whose href ends with ".pdf" */
+/* a[href$=".pdf"] {
+  background-color: yellow;
+} */
+
+/* S11: Only the email input */
+/* input[type="email"] {
+  background-color: yellow;
+} */
+
+/* S12: Only disabled inputs */
+/* input:disabled {
+  background-color: yellow;
+} */
+
+/* S13: The first list item in every list */
+/* li:first-child {
+  background-color: yellow;
+} */
+
+/* S14: Both <h2> headings AND P6, in one rule */
+/* h2, #p6 {
+  background-color: yellow;
+} */

@@ -1,9 +1,7 @@
 /* =====================================================================
    The Byte Café – Team stylesheet
    Team members (Driver / Navigator):
-     1. _John Sande_____________________   2. __N/A (Solo)____________________
-   Write your CSS in the sections below. Keep the comments!
-   Add a short comment above every rule explaining WHY you wrote it.
+     1. John Sande                      2. N/A (Solo)
    ===================================================================== */
 
 /* ---------- PART 4: Custom properties (colours, radius) ---------- */
@@ -17,7 +15,7 @@
 }
 
 /* ---------- PART 5: Box model reset ---------- */
-/* Include padding and border inside element width and height */
+/* Include padding and border inside width and height for every element */
 *,
 *::before,
 *::after {
@@ -25,7 +23,7 @@
 }
 
 /* ---------- PART 4: Typography & colour (body, headings, links) ---------- */
-/* Base page typography, line height, and cafe colours */
+/* Set base page typography, line height, and warm cream background */
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -35,86 +33,155 @@ body {
   background-color: var(--cream);
 }
 
-/* Heading hierarchy and cafe accent colour */
-h1, h2, h3 {
+/* Style headings with a classic serif stack and cafe accent colour */
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
   line-height: 1.25;
   color: var(--brown-dark);
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.25rem;
+  margin: 0 0 0.75rem;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+
+/* Add a subtle gold bar under every section heading */
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--gold);
+  margin: 0.5rem auto 0;
+  border-radius: 999px;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+  margin: 0.75rem 0 0.4rem;
 }
 
-/* Keep text lines comfortable to read at ~65 characters */
+/* Keep paragraphs readable and prevent wide text blocks */
 p {
   max-width: 65ch;
+  margin-top: 0;
 }
 
-/* ---------- PART 7 & 9: Header (flexbox + sticky) ---------- */
-/* Sticky cafe header with flexbox alignment and bottom border */
-header {
+/* Keep images responsive and prevent giant unscaled SVGs */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Link states in LVHFA order with clear keyboard focus visibility */
+:link {
+  color: var(--brown);
+}
+
+:visited {
+  color: var(--brown-dark);
+}
+
+:hover {
+  color: var(--brown-dark);
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+:active {
+  color: #000000;
+}
+
+/* ---------- PART 7 & 9: Header & Navigation (Flexbox + Sticky) ---------- */
+/* Keep header bar pinned at top with logo left and navigation right */
+.site-header {
   position: sticky;
   top: 0;
   z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.85rem 2rem;
   background-color: var(--brown-dark);
   color: var(--cream);
   border-bottom: 3px solid var(--gold);
 }
 
-/* ---------- PART 6 & 7: Navigation list ---------- */
-/* Horizontal navigation links without bullet points */
-nav ul {
+/* Align logo icon and cafe name side by side */
+.logo {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--cream);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.logo img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Lay out navigation items in a horizontal row */
+.nav-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-nav a {
+.nav-list a {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
   color: var(--cream);
   text-decoration: none;
   font-weight: 600;
 }
 
-nav a:hover {
-  color: var(--gold);
+.nav-list a:hover {
+  background-color: var(--gold);
+  color: var(--brown-dark);
 }
 
-/* ---------- Hero & buttons ---------- */
-/* Hero section styling with semi-transparent gradient over cover image */
+/* ---------- Hero & Buttons ---------- */
+/* Style full-width hero banner with warm gradient and centered call-to-action */
 .hero {
-  background-image:
-    linear-gradient(rgba(74, 41, 23, 0.72), rgba(107, 62, 38, 0.72)),
-    url("../images/hero-cafe.svg");
-  background-color: var(--brown);
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(135deg, var(--brown-dark), var(--brown));
   color: var(--cream);
-  padding: 3rem 2rem;
-  border-radius: var(--radius);
-  margin: 1.5rem 2rem;
+  text-align: center;
+  padding: 4rem 2rem;
 }
 
-.hero h1,
-.hero h2 {
+.hero h1 {
   color: var(--cream);
 }
 
-/* Primary action button styling */
-.btn {
+.hero p {
+  margin: 0 auto 1.5rem;
+  color: var(--cream);
+}
+
+/* Style primary action buttons */
+.btn,
+.btn-primary {
   display: inline-block;
   padding: 0.7rem 1.4rem;
   background-color: var(--gold);
@@ -123,155 +190,250 @@ nav a:hover {
   font-weight: 700;
   border-radius: var(--radius);
   border: none;
+  cursor: pointer;
 }
 
-.btn:hover {
+.btn:hover,
+.btn-primary:hover {
   background-color: var(--cream);
+  color: var(--brown-dark);
 }
 
-/* ---------- Main sections ---------- */
-/* Main content container spacing and layout */
-main {
+/* ---------- PART 5: Main Sections ---------- */
+/* Center page sections and give comfortable vertical spacing */
+main > section {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 4rem 1.5rem;
 }
 
-section {
-  margin-bottom: 2.5rem;
-}
-
-/* ---------- PART 8: Cards (grid) ---------- */
-/* Responsive card grid layout */
-.cards,
-.menu-grid {
+/* ---------- PART 8 & 9: Cards Grid + Badge Positioning ---------- */
+/* Responsive multi-column grid for specials cards */
+.card-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
+  align-items: stretch;
 }
 
-/* ---------- PART 5 & 9: Card box model + badge ---------- */
-/* Card container spacing, border, and badge positioning */
+/* Card container with flex column so prices align at the bottom */
 .card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   background-color: #ffffff;
-  padding: 1.25rem;
+  padding: 1rem;
   border-radius: var(--radius);
-  border: 1px solid #e2d4c3;
+  border: 1px solid #e6d7c3;
+  box-shadow: 0 4px 12px rgba(74, 41, 23, 0.08);
 }
 
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: calc(var(--radius) - 2px);
+}
+
+/* Push card price to the bottom regardless of description length */
+.card .price {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+}
+
+/* Angled NEW badge anchored to the top-right corner of its card */
 .badge {
   position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  background-color: var(--gold);
-  color: var(--brown-dark);
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--radius);
-  font-size: 0.8rem;
+  top: -0.5rem;
+  right: -0.5rem;
+  background-color: #c62828;
+  color: #ffffff;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transform: rotate(8deg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- PART 6: Lists & Menu Table ---------- */
+/* Roman numeral event list with styled markers */
+.event-list {
+  list-style-type: upper-roman;
+  padding-left: 1.75rem;
+}
+
+.event-list li::marker {
+  color: var(--brown);
   font-weight: 700;
 }
 
-/* ---------- PART 6: Menu table ---------- */
-/* Styled menu table with borders and readable spacing */
+/* Feature list with square markers and dashed dividers between items */
+.feature-list {
+  list-style-type: square;
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.feature-list li + li {
+  border-top: 1px dashed #d4c2aa;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Menu table styling with header row, zebra striping, and aligned columns */
 table {
   width: 100%;
   border-collapse: collapse;
   background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(74, 41, 23, 0.06);
 }
 
 th,
 td {
   padding: 0.75rem 1rem;
-  border: 1px solid #e2d4c3;
+  border-bottom: 1px solid #eadccf;
   text-align: left;
 }
 
-th {
-  background-color: var(--brown);
+thead th {
+  background-color: var(--brown-dark);
   color: var(--cream);
+  font-weight: 700;
 }
 
-/* ---------- PART 6: Lists ---------- */
-/* Spacing for ordered and unordered content lists */
-ul,
-ol {
-  padding-left: 1.5rem;
+tbody tr:nth-child(even) {
+  background-color: #faf4ec;
 }
 
-li {
-  margin-bottom: 0.4rem;
+tbody tr:hover {
+  background-color: #f3e6d3;
 }
 
-/* ---------- PART 8: Booking form (grid) ---------- */
-/* Two-column booking form layout with clean input styling */
-form {
+td:first-child,
+th:first-child {
+  font-weight: 700;
+}
+
+td:last-child,
+th:last-child {
+  text-align: right;
+}
+
+caption {
+  caption-side: bottom;
+  font-style: italic;
+  color: #5a4636;
+  padding-top: 0.6rem;
+}
+
+/* ---------- PART 8: Booking Form (Grid) ---------- */
+/* Two-column booking form layout with right-aligned labels */
+.booking-form {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  max-width: 700px;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: var(--radius);
+  border: 1px solid #e6d7c3;
+  box-shadow: 0 4px 14px rgba(74, 41, 23, 0.08);
 }
 
-label {
-  display: block;
+.booking-form label {
+  grid-column: 1 / 2;
+  align-self: center;
+  text-align: right;
   font-weight: 600;
-  margin-bottom: 0.25rem;
+  color: var(--brown-dark);
 }
 
-input,
-select,
-textarea {
+.booking-form input,
+.booking-form textarea {
+  grid-column: 2 / 3;
   width: 100%;
   padding: 0.6rem 0.75rem;
   border: 1px solid #c9b59c;
   border-radius: var(--radius);
   font-family: inherit;
   font-size: 1rem;
+  background-color: #ffffff;
 }
 
-form button,
-form .btn,
-form .full-width {
-  grid-column: 1 / -1;
+.booking-form input:focus,
+.booking-form textarea:focus {
+  outline: 2px solid var(--gold);
+  border-color: var(--brown);
+}
+
+.booking-form input[type="email"] {
+  background-color: #fdf9f2;
+}
+
+.booking-form button {
+  grid-column: 2 / 3;
+  justify-self: start;
 }
 
 /* ---------- Footer ---------- */
-/* Café footer styling */
+/* Dark brown footer bar at bottom of page */
 footer {
   text-align: center;
   padding: 1.5rem 2rem;
   background-color: var(--brown-dark);
   color: var(--cream);
-  margin-top: 3rem;
+  font-size: 0.9rem;
 }
 
-/* ---------- PART 10: Responsive design ---------- */
-/* Stack navigation, single-column form, and compact header on smaller screens */
+footer p {
+  margin: 0.25rem auto;
+  color: var(--cream);
+}
+
+/* ---------- PART 10: Responsive Design (<= 640px) ---------- */
+/* Stack header, simplify booking form, and hide table description on small screens */
 @media (max-width: 640px) {
-  header {
+  .site-header {
+    position: static;
     flex-direction: column;
-    gap: 0.75rem;
     padding: 1rem;
   }
 
-  nav ul {
-    flex-wrap: wrap;
+  .nav-list {
     justify-content: center;
-    gap: 0.75rem 1rem;
   }
 
   .hero {
-    margin: 1rem;
-    padding: 2rem 1.25rem;
+    padding: 2.5rem 1.25rem;
   }
 
-  form {
+  .booking-form {
     grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+
+  .booking-form label,
+  .booking-form input,
+  .booking-form textarea,
+  .booking-form button {
+    grid-column: 1 / -1;
+    text-align: left;
+    justify-self: stretch;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    display: none;
   }
 }
 
-/* ---------- Extensions: Dark Theme, Transitions, Grid Areas & Print ---------- */
-/* Dark theme custom properties toggled via .dark or system preference */
+/* ---------- Extensions: Dark Theme, Transitions & Print ---------- */
 body.dark {
   --cream: #1b1410;
   --brown: #9c5a35;
@@ -280,63 +442,16 @@ body.dark {
   --text: #f5ede3;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --cream: #1b1410;
-    --brown: #9c5a35;
-    --brown-dark: #120b07;
-    --gold: hsl(42 86% 63%);
-    --text: #f5ede3;
-  }
-}
-
-/* Smooth background color transition on buttons and navigation links */
-button,
 .btn,
-nav a,
+.btn-primary,
 .nav-list a {
-  transition: background-color 0.2s;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Named grid areas layout for events and opening hours aside */
-.events-layout {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-areas: "events hours";
-  gap: 1.5rem;
-  align-items: start;
-}
-
-.events-main {
-  grid-area: events;
-}
-
-.opening-hours,
-aside {
-  grid-area: hours;
-  background-color: #ffffff;
-  padding: 1.25rem;
-  border-radius: var(--radius);
-  border: 1px solid #e2d4c3;
-}
-
-@media (max-width: 640px) {
-  .events-layout {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "events"
-      "hours";
-  }
-}
-
-/* Print stylesheet: hide header, hero, and form; print menu in black on white */
 @media print {
-  header,
   .site-header,
   .hero,
-  form,
-  .booking-form,
-  aside {
+  .booking-form {
     display: none;
   }
 
@@ -350,6 +465,6 @@ aside {
   td {
     background-color: #ffffff;
     color: #000000;
-    border-color: #000000;
+    border: 1px solid #000000;
   }
 }

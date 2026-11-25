@@ -2,20 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Byte Café – Campus Coffee &amp; Code</title>
-  <!-- PART 1: link your external stylesheet on the next line -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Byte Café</title>
+  <!-- PART 1: link your external stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- ================= HEADER ================= -->
   <header class="site-header">
-    <a href="#top" class="logo" id="top">
-      <img src="images/logo.svg" alt="" width="40" height="40">
+    <a class="logo" href="#">
+      <img src="images/logo.svg" alt="The Byte Café logo">
       <span>The Byte Café</span>
     </a>
-    <nav aria-label="Main navigation">
+    <nav aria-label="Primary navigation">
       <ul class="nav-list">
         <li><a href="#menu">Menu</a></li>
         <li><a href="#events">Events</a></li>
@@ -25,34 +23,33 @@
     </nav>
   </header>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <h1>Coffee, Code &amp; Community</h1>
-    <p class="tagline">The campus café where every cup comes with free Wi-Fi and good ideas.</p>
-    <a href="#menu" class="btn btn-primary">See the menu</a>
-  </section>
-
   <main>
+    <section class="hero">
+      <h1>Coffee, Code &amp; Community</h1>
+      <p>The campus café where every cup comes with free Wi-Fi and good ideas.</p>
+      <a class="btn btn-primary" href="#menu">See the menu</a>
+    </section>
 
-    <!-- ================= SPECIALS (cards) ================= -->
-    <section id="specials" class="specials">
+    <section id="specials">
       <h2>This Week's Specials</h2>
       <div class="card-list">
         <article class="card">
-          <span class="badge">New</span>
-          <img src="images/latte.svg" alt="A caramel latte in a white cup">
+          <span class="badge">NEW</span>
+          <img src="images/latte.svg" alt="Caramel Cache Latte">
           <h3>Caramel Cache Latte</h3>
           <p>Smooth espresso, steamed milk and a drizzle of caramel. Stored in memory for later.</p>
           <p class="price">KSh 280</p>
         </article>
+
         <article class="card">
-          <img src="images/sandwich.svg" alt="A toasted chicken sandwich">
+          <img src="images/sandwich.svg" alt="Full-Stack Sandwich">
           <h3>Full-Stack Sandwich</h3>
           <p>Three layers: grilled chicken, fresh salad and our secret sauce on toasted bread.</p>
           <p class="price">KSh 450</p>
         </article>
+
         <article class="card">
-          <img src="images/muffin.svg" alt="A blueberry muffin">
+          <img src="images/muffin.svg" alt="Blueberry Bug-Fix Muffin">
           <h3>Blueberry Bug-Fix Muffin</h3>
           <p>Baked every morning. Guaranteed to fix at least one bug in your code (not really).</p>
           <p class="price">KSh 150</p>
@@ -60,17 +57,16 @@
       </div>
     </section>
 
-    <!-- ================= MENU (table) ================= -->
-    <section id="menu" class="menu">
+    <section id="menu">
       <h2>Our Menu</h2>
-      <table class="menu-table">
+      <table>
         <caption>Prices include VAT</caption>
         <thead>
           <tr>
-            <th scope="col">Item</th>
-            <th scope="col">Description</th>
-            <th scope="col">Size</th>
-            <th scope="col">Price (KSh)</th>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Size</th>
+            <th>Price (KSh)</th>
           </tr>
         </thead>
         <tbody>
@@ -107,22 +103,22 @@
           <tr>
             <td>Samosa (2 pcs)</td>
             <td>Crispy pastry with spiced beef or vegetables</td>
-            <td>–</td>
+            <td>—</td>
             <td>100</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <!-- ================= EVENTS (list) ================= -->
-    <section id="events" class="events">
+    <section id="events">
       <h2>Upcoming Events</h2>
       <ol class="event-list">
-        <li><strong>Monday</strong> – Beginners' HTML &amp; CSS Clinic <span class="tag">Free</span></li>
-        <li><strong>Wednesday</strong> – JavaScript Study Group</li>
-        <li><strong>Friday</strong> – Hackathon Warm-up Night <span class="tag">Members</span></li>
-        <li><strong>Saturday</strong> – Open Mic: Demo Your Project</li>
+        <li>Monday – Beginners' HTML &amp; CSS Clinic</li>
+        <li>Wednesday – JavaScript Study Group</li>
+        <li>Friday – Hackathon Warm-up Night</li>
+        <li>Saturday – Open Mic: Demo Your Project</li>
       </ol>
+
       <h3>Why students love us</h3>
       <ul class="feature-list">
         <li>Fast Wi-Fi and plenty of power sockets</li>
@@ -131,36 +127,32 @@
       </ul>
     </section>
 
-    <!-- ================= CONTACT (form) ================= -->
-    <section id="contact" class="contact">
+    <section id="contact">
       <h2>Book a Table</h2>
-      <form class="booking-form" action="#" method="post">
+      <form class="booking-form">
         <label for="name">Full name</label>
-        <input id="name" name="name" type="text" required>
+        <input id="name" name="name" type="text">
 
         <label for="email">Email</label>
-        <input id="email" name="email" type="email" required>
+        <input id="email" name="email" type="email">
 
         <label for="date">Date</label>
         <input id="date" name="date" type="date">
 
         <label for="guests">Guests</label>
-        <input id="guests" name="guests" type="number" min="1" max="12" value="2">
+        <input id="guests" name="guests" type="number" value="2">
 
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="4"></textarea>
 
-        <button type="submit" class="btn btn-primary">Send booking</button>
+        <button class="btn btn-primary" type="submit">Send booking</button>
       </form>
     </section>
-
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
-    <p>&copy; 2026 The Byte Café · Student Centre, Ground Floor</p>
+  <footer>
+    <p>© 2026 The Byte Café · Student Centre, Ground Floor</p>
     <p>Open Mon–Sat, 7:00 am – 9:00 pm</p>
   </footer>
-
 </body>
 </html>
