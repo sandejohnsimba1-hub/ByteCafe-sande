@@ -430,36 +430,47 @@ footer p {
     padding: 2.5rem 1.25rem;
   }
 
+  .booking-form,
+  .booking-form * {
+    position: static;
+    float: none;
+    grid-column: 1 / -1;
+    grid-row: auto;
+    flex: 1 1 100%;
+  }
+
   .booking-form {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     gap: 0.65rem;
     padding: 1.25rem;
   }
 
   .booking-form label {
+    display: block;
+    width: 100%;
     text-align: left;
     margin-top: 0.25rem;
   }
 
   .booking-form input,
-  .booking-form textarea,
-  .booking-form button,
-  .booking-form .btn,
-  .booking-form .btn-primary {
-    width: 100%;
-    text-align: center;
-  }
-
-  .booking-form input,
   .booking-form textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
     text-align: left;
     margin-bottom: 0.35rem;
   }
 
   .booking-form button,
   .booking-form .btn,
-  .booking-form .btn-primary {
+  .booking-form .btn-primary,
+  .booking-form [type="submit"] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
     margin-top: 0.5rem;
     padding: 0.85rem 1.25rem;
   }
