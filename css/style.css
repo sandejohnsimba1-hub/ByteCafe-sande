@@ -119,13 +119,13 @@ a.logo:active span {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  color: #fdf6ec;
+  color: #fdf6ec !important;
   text-decoration: none;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.5rem;
   font-weight: 700;
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .logo img {
