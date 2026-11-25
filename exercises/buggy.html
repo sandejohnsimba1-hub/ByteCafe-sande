@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Part 11 – Debug Clinic</title>
   <meta charset="UTF-8">
+  <title>Part 11 – Debug Clinic</title>
   <!--
     This page contains 10 deliberate bugs (HTML and CSS) plus 1 best-practice
     problem in the <head>.
@@ -17,55 +17,65 @@
     Find each bug, fix it, and record it in the worksheet (line, bug, fix, how you found it).
   -->
   <style>
+    /* Set base font and page background */
     body {
-      font-family: Arial, sans-serif
+      font-family: Arial, sans-serif;
       background-color: #f2f2f2;
     }
 
+    /* Make main heading dark blue */
     h1 {
-      colour: darkblue;
+      color: darkblue;
     }
 
+    /* Transform section headings to uppercase */
     h2 {
-      text-transform: upper-case;
+      text-transform: uppercase;
     }
 
-    ol.books li::marker {
+    /* Style list markers on the book list with orange stars */
+    ul.books li::marker {
       content: "★ ";
       color: orange;
     }
 
+    /* Style card titles in bold green */
     .card-title {
       font-weight: bold;
       color: green;
     }
 
+    /* Lay out the contact form in a two-column grid */
     form {
       display: grid;
       grid-template-columns: 1fr 2fr;
-      gap: 12 px;
+      gap: 12px;
       max-width: 500px;
     }
 
+    /* Place labels in the first column and align right */
     label {
       grid-column: 1 / 2;
       text-align: right;
     }
 
+    /* Place inputs and submit button in the second column */
     input,
     button {
       grid-column: 2 / 3;
     }
 
-    button:hoover {
+    /* Highlight the button on hover */
+    button:hover {
       background-color: deepskyblue;
     }
 
-    #Contact {
+    /* Add border and padding around the contact form */
+    #contact {
       border: 1px solid #ccc;
       padding: 1rem;
     }
-  <style>
+  </style>
 </head>
 <body>
   <h1>Debug Clinic</h1>
@@ -79,7 +89,7 @@
 
   <h2>Featured</h2>
   <div class="card">
-    <h3 class="card-tittle">Learning Grid Layout</h3>
+    <h3 class="card-title">Learning Grid Layout</h3>
     <p>Two-dimensional layouts made simple.</p>
   </div>
 
@@ -88,7 +98,7 @@
     <label for="fullname">Name</label>
     <input id="fullname" type="text">
 
-    <label for="mail">Email</label>
+    <label for="email">Email</label>
     <input id="email" type="email">
 
     <button>Send</button>
