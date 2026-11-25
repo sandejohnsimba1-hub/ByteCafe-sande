@@ -147,10 +147,13 @@ img {
 }
 
 .hero {
+  width: 100%;
+  max-width: none;
+  margin: 0;
   background: linear-gradient(135deg, var(--brown-dark), var(--brown));
   color: var(--cream);
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
 }
 
 .hero h1 {
