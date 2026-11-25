@@ -383,9 +383,23 @@ caption {
   background-color: #fdf9f2;
 }
 
-.booking-form button {
+.booking-form button,
+.booking-form .btn,
+.booking-form .btn-primary {
   grid-column: 2 / 3;
-  justify-self: start;
+  width: 100%;
+  justify-self: stretch;
+  text-align: center;
+  background-color: #f4cb8d;
+  color: #5a4636;
+  font-weight: 700;
+}
+
+.booking-form button:hover,
+.booking-form .btn:hover,
+.booking-form .btn-primary:hover {
+  background-color: var(--gold);
+  color: var(--brown-dark);
 }
 
 footer {
@@ -428,6 +442,12 @@ footer p {
     grid-column: 1 / -1;
     text-align: left;
     justify-self: stretch;
+  }
+
+  .booking-form button,
+  .booking-form .btn,
+  .booking-form .btn-primary {
+    text-align: center;
   }
 
   th:nth-child(2),
