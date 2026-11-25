@@ -106,18 +106,25 @@ img {
   border-bottom: 3px solid var(--gold);
 }
 
-.logo {
-  display: flex;
+.logo,
+.logo:link,
+.logo:visited,
+.logo:hover,
+.logo:active {
+  display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
   color: var(--cream);
   text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
   font-weight: 700;
+  opacity: 1;
 }
 
 .logo img {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
 }
 
@@ -131,7 +138,8 @@ img {
   padding: 0;
 }
 
-.nav-list a {
+.nav-list a,
+.nav-list a:visited {
   display: inline-block;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
@@ -141,7 +149,8 @@ img {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.nav-list a:hover {
+.nav-list a:hover,
+.nav-list a:active {
   background-color: var(--gold);
   color: var(--brown-dark);
 }
@@ -177,7 +186,9 @@ main > section:not(.hero) {
 }
 
 .btn,
-.btn-primary {
+.btn-primary,
+.btn:visited,
+.btn-primary:visited {
   display: inline-block;
   padding: 0.7rem 1.4rem;
   background-color: var(--gold);
@@ -191,7 +202,9 @@ main > section:not(.hero) {
 }
 
 .btn:hover,
-.btn-primary:hover {
+.btn-primary:hover,
+.btn:active,
+.btn-primary:active {
   background-color: var(--cream);
   color: var(--brown-dark);
 }
