@@ -2,47 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Part 2 – Selector Gym</title>
-  <style>
-    /* Helper styles – do not change */
-    body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.5; }
-    .box { border: 1px dashed #999; padding: 0.75rem 1rem; margin: 1rem 0; }
-    code { background: #eee; padding: 0 4px; }
-  </style>
-  <!-- Write YOUR answers in css/selectors.css -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Part 2 – The Selector Gym</title>
   <link rel="stylesheet" href="css/selectors.css">
 </head>
 <body>
-  <h1>Selector Gym</h1>
-  <p>For each challenge, write ONE rule in <code>css/selectors.css</code> that gives
-     <strong>only</strong> the described elements <code>background-color: yellow</code>.</p>
+  <h1>The Selector Gym</h1>
 
-  <div class="box" id="gym">
-    <h2>Section A</h2>
-    <p class="intro">P1 – intro paragraph</p>
-    <p>P2 – ordinary paragraph</p>
-    <p class="intro highlight">P3 – intro AND highlight</p>
-    <ul>
-      <li>L1 – item</li>
-      <li class="highlight">L2 – highlighted item</li>
-      <li>L3 – item
-        <ul>
-          <li>L3a – nested item</li>
-        </ul>
-      </li>
-    </ul>
-    <h2>Section B</h2>
-    <p>P4 – paragraph straight after the second h2</p>
-    <p>P5 – another paragraph</p>
-    <p id="special">P6 – paragraph with an id</p>
-    <a href="https://developer.mozilla.org">A1 – external https link</a> |
-    <a href="contact.html">A2 – local link</a> |
-    <a href="guide.pdf">A3 – link to a PDF</a>
-    <form>
-      <input type="text" placeholder="I1 – text input">
-      <input type="email" placeholder="I2 – email input">
-      <input type="text" placeholder="I3 – disabled text input" disabled>
-    </form>
-  </div>
+  <p class="intro">P1: First paragraph (class="intro").</p>
+  <p class="intro highlight">P2: Second paragraph (class="intro highlight").</p>
+  <p class="highlight">P3: Third paragraph (class="highlight").</p>
+
+  <h2>Section Heading 1</h2>
+  <p>P4: Paragraph immediately after h2.</p>
+  <p>P5: Another paragraph after h2 in the same parent.</p>
+  <p id="p6">P6: Paragraph with id="p6".</p>
+
+  <ul>
+    <li class="intro">L1: First list item (class="intro").</li>
+    <li class="highlight">L2: Second list item (class="highlight").</li>
+    <li>
+      L3: Third list item with nested list:
+      <ul>
+        <li>L3a: Nested first list item.</li>
+        <li>L3b: Nested second list item.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Section Heading 2</h2>
+  <p>P7: Paragraph after second h2.</p>
+
+  <p>
+    <a href="https://example.com">A1: HTTPS link</a> |
+    <a href="http://example.com">A2: HTTP link</a> |
+    <a href="https://example.com/guide.pdf">A3: HTTPS PDF link</a> |
+    <a href="notes.pdf">A4: Local PDF link</a>
+  </p>
+
+  <form>
+    <label for="name-input">Name:</label>
+    <input id="name-input" type="text" placeholder="Text input">
+
+    <label for="email-input">Email:</label>
+    <input id="email-input" type="email" placeholder="Email input">
+
+    <label for="disabled-input">Disabled:</label>
+    <input id="disabled-input" type="text" value="Locked field" disabled>
+  </form>
 </body>
 </html>
