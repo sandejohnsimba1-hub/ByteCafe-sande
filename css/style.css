@@ -78,17 +78,9 @@ img {
   color: var(--brown-dark);
 }
 
-:hover {
-  color: var(--brown-dark);
-}
-
 :focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 2px;
-}
-
-:active {
-  color: #000000;
 }
 
 .site-header {
@@ -315,9 +307,11 @@ td {
   text-align: left;
 }
 
-thead th {
+thead th,
+thead th:hover,
+thead th:active {
   background-color: var(--brown-dark);
-  color: #fdf6ec;
+  color: #fdf6ec !important;
   font-weight: 700;
 }
 
